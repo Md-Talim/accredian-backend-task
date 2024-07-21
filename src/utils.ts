@@ -19,20 +19,20 @@ export function sendNotification(
 
   const subject = "Your Friend Referred You to a Course!";
   const htmlBody = `
-   <h1>You've Been Referred to a Course!</h1>
+    <h1>You've Been Referred to a Course!</h1>
     <p>Dear ${refereeName},</p>
     <p>We are excited to inform you that your friend, ${referrerName}, has referred you to our course, <strong>${courseName}</strong>.</p>
-    <p>Here's a personal message from ${referrerName}:</p>
+
     <p>This course offers valuable insights and skills that can help you achieve your goals. We believe you will find it both enjoyable and beneficial.</p>
     <p>If you have any questions or need further information, feel free to reach out to us.</p>
-    <p>Best Regards,<br>Your Company Name</p>
+    <p>Best Regards,<br>Talim (test-email)</p>
   `;
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: refereeEmail,
     subject,
-    text: htmlBody,
+    html: htmlBody,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
