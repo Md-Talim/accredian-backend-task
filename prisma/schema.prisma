@@ -25,7 +25,6 @@ model Referee {
   referrerId      Int
   referrer        Referrer   @relation(fields: [referrerId], references: [id])
   createdAt       DateTime   @default(now())
-  personalMessage String?
   Referral        Referral[]
 }
 

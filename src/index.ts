@@ -23,7 +23,6 @@ app.post("/referral", async (req, res) => {
     refereeEmail,
     refereePhone,
     courseName,
-    personalMessage,
   } = req.body;
 
   // Validate input
@@ -64,7 +63,6 @@ app.post("/referral", async (req, res) => {
         phoneNumber: refereePhone,
         courseName,
         referrerId: referrer.id,
-        personalMessage,
       },
     });
 
