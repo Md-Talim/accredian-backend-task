@@ -5,4 +5,4 @@
 
 */
 -- AlterTable
-ALTER TABLE `referee` DROP COLUMN `personalMessage`;
+ALTER TABLE `Referee` DROP COLUMN `personalMessage`;
