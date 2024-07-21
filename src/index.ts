@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
+import { sendNotification } from "./utils";
 
 const prismaClient = new PrismaClient();
 const app = express();
@@ -74,6 +75,9 @@ app.post("/referral", async (req, res) => {
         refereeId: referee.id,
       },
     });
+
+    // Send email notification
+    sendNotification(referrerName, refereeName, refereeEmail, courseName);
 
     res.status(200).json(referral);
   } catch (error) {
