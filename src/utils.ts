@@ -8,7 +8,6 @@ export function sendNotification(
 ) {
   const user = process.env.EMAIL_USER,
     pass = process.env.EMAIL_PASS;
-  console.log({ user, pass });
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
